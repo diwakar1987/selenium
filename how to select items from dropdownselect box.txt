@@ -1,0 +1,21 @@
+public class checkBoxSel {
+
+    public static void main(String[] args) {
+
+         WebDriver driver = new FirefoxDriver();
+         EventFiringWebDriver dr = null ;
+
+
+         dr = new EventFiringWebDriver(driver);
+         dr.get("http://www.google.co.in/");
+
+         dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+         dr.findElement(By.linkText("Gmail")).click() ;
+
+         Select sel = new Select(driver.findElement(By.tagName("select")));
+         sel.selectByValue("fil");
+
+    }
+
+}

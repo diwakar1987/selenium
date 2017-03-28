@@ -1,0 +1,143 @@
+import org.junit.After;
+2
+import org.junit.Before;
+3
+import org.junit.Test;
+4
+import org.openqa.selenium.Alert;
+5
+import org.openqa.selenium.By;
+6
+import org.openqa.selenium.WebDriver;
+7
+import org.openqa.selenium.firefox.FirefoxDriver;
+8
+ 
+9
+/**
+10
+* class description
+11
+*/
+12
+ 
+13
+public class DemoWebAlert {
+14
+                WebDriver driver;
+15
+                /**
+16
+                * Constructor
+17
+                */
+18
+                public DemoWebAlert() {                            
+19
+                }
+20
+ 
+21
+                /**
+22
+                * Set up browser settings and open the application
+23
+                */
+24
+ 
+25
+                @Before
+26
+                public void setUp() {
+27
+                                driver=new FirefoxDriver();
+28
+                                // Opened the application
+29
+                                driver.get("file:///F:/Work/Selenium/Testing-Presentation/DemoWebPopup.htm");
+30
+                                driver.manage().window().maximize();
+31
+                }
+32
+ 
+33
+                /**
+34
+                * Test to check Select functionality
+35
+                * @throws InterruptedException
+36
+                */
+37
+ 
+38
+                @Test
+39
+                public void testWebAlert() throws InterruptedException {                          
+40
+                                // clicking on try it button
+41
+                                driver.findElement(By.xpath("//button[contains(text(),'Try it')]")).click();
+42
+                                Thread.sleep(5000);
+43
+ 
+44
+                                // accepting javascript alert
+45
+                                Alert alert = driver.switchTo().alert();
+46
+                                alert.accept();
+47
+ 
+48
+                                // clicking on try it button
+49
+                                driver.findElement(By.xpath("//button[contains(text(),'Try it')]")).click();
+50
+                                Thread.sleep(5000);
+51
+ 
+52
+                                // accepting javascript alert
+53
+                                driver.switchTo().alert().dismiss();
+54
+ 
+55
+                                // clicking on try it button
+56
+                                driver.findElement(By.xpath("//button[contains(text(),'Try it')]")).click();
+57
+                                Thread.sleep(5000);
+58
+ 
+59
+                                // accepting javascript alert
+60
+                                System.out.println(driver.switchTo().alert().getText());
+61
+                                driver.switchTo().alert().accept();
+62
+                }
+63
+ 
+64
+                /**
+65
+                * Tear down the setup after test completes
+66
+                */
+67
+ 
+68
+                @After
+69
+                public void tearDown() {             
+70
+                    driver.quit();
+71
+                }
+72
+}

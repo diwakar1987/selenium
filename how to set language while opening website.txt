@@ -1,0 +1,39 @@
+
+package practiceTestCases;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.Alert;
+ 
+import org.openqa.selenium.By;
+ 
+import org.openqa.selenium.WebDriver;
+ 
+import org.openqa.selenium.firefox.FirefoxDriver;
+ 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+ 
+import org.openqa.selenium.support.ui.WebDriverWait;
+ 
+public class PracticeWaitCommands {
+ 
+	public static WebDriver driver;
+ 
+	public static void main(String[] args) {
+ 
+		// Create a new instance of the Firefox driver
+
+
+
+FirefoxProfile profile = new FirefoxProfile();
+//setting the locale french : ‘fr’
+profile.setPreference(“intl.accept_languages”,”fr”);
+driver = new FirefoxDriver(profile);
+driver.get(“http://google.co.in&#8221;);
+
+
+        driver.close();
+ 
+	}
+ 
+}

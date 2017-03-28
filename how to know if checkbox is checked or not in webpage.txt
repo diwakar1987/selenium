@@ -1,0 +1,44 @@
+
+package temp;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class first {
+
+public static void main(String[] args) {
+              // TODO Auto-generated method stub
+
+System.setProperty("webdriver.chrome.driver", "C:\\Selenuim\\chromedriver2.3.exe");
+WebDriver driver =  new ChromeDriver();
+
+try{
+driver.get("http://register.rediff.com/register/register.php");
+
+Thread.sleep(2000);
+WebElement e = driver.findElement(By.name("chkemail"));
+
+boolean actualValue = e.isSelected();
+
+if (actualValue)
+       System.out.println("Checkbox is selected");
+else
+       System.out.println("Checkbox is not selected");
+      
+Thread.sleep(2000);
+
+}
+
+catch(Exception ex){
+       System.out.println("Exception " + ex.getMessage());
+              }
+              finally{
+                    
+                     driver.close();
+                     driver.quit();
+              }
+       }
+
+}

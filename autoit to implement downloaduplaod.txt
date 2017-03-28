@@ -1,0 +1,43 @@
+
+25
+26
+27
+28
+29
+30
+31
+32
+33
+package practiceTestCases;
+ 
+import java.io.IOException;
+ 
+import java.util.concurrent.TimeUnit;
+ 
+import org.openqa.selenium.By;
+ 
+import org.openqa.selenium.WebDriver;
+ 
+import org.openqa.selenium.firefox.FirefoxDriver;
+ 
+public class AutoIt {
+ 
+	private static WebDriver driver = null;
+ 
+	public static void main(String[] args) throws IOException, InterruptedException {
+ 
+	    driver = new FirefoxDriver();
+ 
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ 
+		Runtime.getRuntime().exec("D:\AutoIt\AutoItTest.exe");
+ 
+		driver.get("http://www.example.com");
+ 
+		Thread.sleep(5000); 
+ 
+		driver.close();
+ 
+		}
+ 
+	}
